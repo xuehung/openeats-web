@@ -17,17 +17,26 @@
 			if(h<30) {
 				level = 0;
 				marginh = 30;
+				header_size = 60;
+				nav_top = 20;
 			}
 			else if(h>=30 && h<130) {
-				level = ((h-30)/(130-30))*0.95;
-				marginh = 30 - ((h-30)/(130-30))*30;
+				ratio =  ((h-30)/(130-30));
+				level = ratio*0.95;
+				marginh = 30 * (1-ratio);
+				header_size = 35 + 25 * (1-ratio);
+				nav_top = 20 * (1-ratio);
 			}
 			if(h >= 130) {
 				level = 0.95;
 				marginh = 0;
+				header_size = 35;
+				nav_top = 0;
 			}
 			$('div.header').css('background-color', 'rgba(230, 240, 240, '+level+')');
 			$('div#header-top-margin').css('height', marginh);
+			$('div.title').css('font-size', header_size + 'px');
+			$('div.nav-div').css('margin-top', nav_top);
 		    });
 
 			$('.nav a').click(function(){
