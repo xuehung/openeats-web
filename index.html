@@ -69,13 +69,14 @@
 	    }
 
 	    div.title {
-		position:relative;
+		/*position:relative;
 		left: 250px;
-		top: 35px;
+		top: 35px;*/
 		font-family: Courier;
 		font-size: 60px;
 		font-weight: bold;
-		width: 400px;
+		margin-left: 95px;
+		margin-top: 30px;
 	    }
 
 	    div.title>a:hover {
@@ -95,9 +96,12 @@
 
 	    .nav-div {
 		margin-right: 60px;
+		margin-top: 50px;
+		/*
 		position:relative;
 		top: -25px;
 		left: 820px;
+		*/
 	    }
 	    .nav > li > a {
 		font-family: Arial;
@@ -183,11 +187,12 @@
 	</style>
     </head>
     <body>
-	    <div class="header">
-		<div class="title">
+	<div class="header">
+	    <div style="width:1000px;margin: 0 auto;">
+		<div class="title pull-left">
 		    <a href=""><span class="title-left">OPEN</span><span class="title-right">EATS</span></a>
 		</div>
-		<div class="nav-div">
+		<div class="nav-div pull-right">
 		    <ul class="nav nav-pills">
 			<li>
 			<a href="about">About</a>
@@ -201,6 +206,7 @@
 		    </ul>
 		</div>
 	    </div>
+	</div>
 	<div class="wrapper">
 	    <div class="header-bg"></div>
 	    <div class="content">
@@ -232,7 +238,7 @@
 			    <div class="pull-left">
 				<img src="img/icon_magazine.png" />
 			    </div>
-			    <div class="feature-title">Food Magazine</div>
+			    <div class="feature-title">Food Scoop</div>
 			    <div class="feature-detail">
 				Test top-concerned foods. Make food recommendations
 			    </div>
@@ -298,7 +304,7 @@
 		    </div>
 
 		    <div class="service">
-			<h1 class="section-title">Food Maganzine</h1>
+			<h1 class="section-title">Food Scoop</h1>
 		    </div>
 
 		    <div class="service">
