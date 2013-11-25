@@ -15,16 +15,20 @@
 		    $(window).scroll(function(){
 			var h = $(this).scrollTop();
 			if(h<30) {
-				$('div.header').css('background-color', 'rgba(230, 240, 240, 0)');
+				level = 0;
+				marginh = 30;
 			}
 			else if(h>=30 && h<130) {
 				level = ((h-30)/(130-30))*0.95;
-				$('div.header').css('background-color', 'rgba(230, 240, 240, '+level+')');
+				marginh = 30 - ((h-30)/(130-30))*30;
 			}
 			if(h >= 130) {
-				$('div.header').css('background-color', 'rgba(230, 240, 240, 0.95)');
+				level = 0.95;
+				marginh = 0;
 			}
-			});
+			$('div.header').css('background-color', 'rgba(230, 240, 240, '+level+')');
+			$('div#header-top-margin').css('height', marginh);
+		    });
 
 			$('.nav a').click(function(){
 			    target = 'div.'+$(this).attr('href')+'-section';
@@ -76,7 +80,6 @@
 		font-size: 60px;
 		font-weight: bold;
 		margin-left: 95px;
-		margin-top: 30px;
 	    }
 
 	    div.title>a:hover {
@@ -96,7 +99,7 @@
 
 	    .nav-div {
 		margin-right: 60px;
-		margin-top: 50px;
+		margin-top: 20px;
 		/*
 		position:relative;
 		top: -25px;
@@ -189,6 +192,7 @@
     <body>
 	<div class="header">
 	    <div style="width:1000px;margin: 0 auto;">
+		<div id="header-top-margin" style="height: 30px;"></div>
 		<div class="title pull-left">
 		    <a href=""><span class="title-left">OPEN</span><span class="title-right">EATS</span></a>
 		</div>
