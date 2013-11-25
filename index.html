@@ -1,173 +1,315 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="description" content="">
-        <meta name="author" content="">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="">
+	<meta name="author" content="">
 
-        <title>OpenEats</title>
+	<title>OpenEats</title>
 
-        <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0-rc1/css/bootstrap.min.css">
-        <style>
-            body {
-                background-color: #fff;
-                background: url('img/bg.png');
-                background-position: -150px -30px;
-                background-repeat:no-repeat;
-            }
-            div.wrapper {
-                height: 600px;
-                width: 1000px;
-                margin: 0 auto;
-            }
-            div.header {
-                height: 200px;
-                background: url('img/banner.png');
-                background-repeat:no-repeat;
-            }
+	<script src="http://code.jquery.com/jquery.js"></script>
+	<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0-rc1/css/bootstrap.min.css">
+	<script type="text/javascript">
+	    $(function(){
+		    $(window).scroll(function(){
+			var h = $(this).scrollTop();
+			if(h<30) {
+				$('div.header').css('background-color', 'rgba(230, 240, 240, 0)');
+			}
+			else if(h>=30 && h<130) {
+				level = ((h-30)/(130-30))*0.95;
+				$('div.header').css('background-color', 'rgba(230, 240, 240, '+level+')');
+			}
+			if(h >= 130) {
+				$('div.header').css('background-color', 'rgba(230, 240, 240, 0.95)');
+			}
+			});
 
-            div.title {
-                position:relative;
-                left: 108px;
-                top: 35px;
-                font-family: Courier;
-                font-size: 60px;
-                font-weight: bold;
-                width: 400px;
-            }
+			$('.nav a').click(function(){
+			    target = 'div.'+$(this).attr('href')+'-section';
+			    if(target.indexOf('mailto:') == 0) 
+			    	return true;
+			    height = $(target).offset().top - 130;
+			    $("html, body").animate({ scrollTop: height }, 400);
+			    return false;
+			});
+			$('.title a').click(function(){
+			    $("html, body").animate({ scrollTop: 0 }, 400);
+			    return false;
+			});
+	    });
+	</script>
+	<style>
+    	    body {
+		background-color: #fff;
+		background: url('img/bg.png');
+		background-position: -150px -30px;
+		background-repeat:no-repeat;
+	    }
+	    hr {
+		margin: 40px 0;
+	    }
+	    div.wrapper {
+		/*height: 600px;*/
+		width: 1000px;
+		margin: 0 auto;
+	    }
+	    div.header-bg {
+		height: 200px;
+		background: url('img/banner.png');
+		background-repeat:no-repeat;
+	    }
 
-            .title-left {
-                color: #00569e;
-                margin: 0;
-                padding: 0;
-            }
-            .title-right {
-                color: #4f40ae;
-                margin: 0;
-                padding: 0;
-            }
+	    div.header {
+		position: fixed;
+		top: 0;
+		width: 100%;
+		z-index: 999;
+	    }
 
-            div.nav {
-                margin-right: 60px;
-                font-family: Arial;
-                font-size: 14px;
-                color: #7075dd;
-            }
+	    div.title {
+		position:relative;
+		left: 250px;
+		top: 35px;
+		font-family: Courier;
+		font-size: 60px;
+		font-weight: bold;
+		width: 400px;
+	    }
 
-            div.content {
-            }
+	    div.title>a:hover {
+		text-decoration: none;
+	    }
 
-            div#left-section {
-                margin: 0 25px 0 60px;
-                width: 470px;
-            }
-            div#right-section {
-                margin: 0 60px 0 25px;
-            }
+	    .title-left {
+		color: #00569e;
+		margin: 0;
+		padding: 0;
+	    }
+	    .title-right {
+		color: #4f40ae;
+		margin: 0;
+		padding: 0;
+	    }
 
-            div.video {
-                background-color: #ddd;
-                font-size: 50px;
-                width: 360px;
-                height: 270px;
-                margin: 25px auto;
-            }
+	    .nav-div {
+		margin-right: 60px;
+		position:relative;
+		top: -25px;
+		left: 820px;
+	    }
+	    .nav > li > a {
+		font-family: Arial;
+		color: #146087;
+		font-weight: bold;
+		font-size: 18px;
+	    }
 
-            .feature-box {
-                margin-top: 15px;
-            }
-            .feature-title {
-                font-family: Arial;
-                font-size: 24px;
-                color: #146087;
-                padding-top: 5px;
-                font-weight: bold;
-            }
-            .feature-detail {
-                font-family: Arial;
-                font-size: 14px;
-                color: #5c4dbc;
-            }
-            .copyright {
-                font-family: Arial;
-                font-size: 11px;
-                color: #9ac1e5;
-            }
-            div.footer {
-                background-color: #2c6395;
-                padding-top: 30px;
-                padding-bottom: 60px;
-                border-top-style: solid;
-                border-top-color: #88b6e2;
-                border-width: 15px;
-            }
-        </style>
+	    .main-section {
+		height: 350px;
+	    }
+
+	    div#left-section {
+		margin: 0 25px 0 60px;
+		width: 470px;
+	    }
+	    div#right-section {
+		margin: 0 60px 0 25px;
+	    }
+
+	    div.video {
+		background-color: #ddd;
+		font-size: 50px;
+		width: 360px;
+		height: 270px;
+		margin: 25px auto;
+	    }
+
+	    .feature-box {
+		margin-top: 15px;
+	    }
+	    .feature-title {
+		font-family: Arial;
+		font-size: 24px;
+		color: #146087;
+		padding-top: 5px;
+		font-weight: bold;
+	    }
+	    .feature-detail {
+		font-family: Arial;
+		font-size: 14px;
+		color: #5c4dbc;
+		font-weight: bold;
+	    }
+	    .copyright {
+		font-family: Arial;
+		font-size: 11px;
+		color: #9ac1e5;
+	    }
+
+	    div.section p {
+		font-family: Arial;
+		font-size: 15px;
+		text-align: justify;
+	    }
+	    div.footer {
+		background-color: #2c6395;
+		padding-top: 30px;
+		padding-bottom: 60px;
+		border-top-style: solid;
+		border-top-color: #88b6e2;
+		border-width: 15px;
+	    }
+
+	    /* CSS for services */
+	    .service {
+		margin-top: 30px;
+		height: 350px;
+	    }
+	    .section-title {
+		font-family: Arial;
+		font-size: 48px;
+		color: #146087;
+		font-weight: bold;
+	    }
+
+	    /* CSS modification for Bootstrap */
+
+	    .nav>li>a:focus, .nav>li>a:hover {
+		background-color: #146087;
+		color: #fff;
+	    }
+	</style>
     </head>
     <body>
-        <div class="wrapper">
-            <div class="header">
-                <div class="title">
-                    <span class="title-left">OPEN</span><span class="title-right">EATS</span>
-                </div>
-                <div class="pull-right nav">
-                    <a href="mailto:xuehung@gmail.com">Contact Us</a>
-                </div>
-            </div>
-            <div class="content">
-                <div id="left-section" class="pull-left">
-                    <div class="feature-box">
-                        <div class="pull-left">
-                            <img src="img/icon_coach.png" />
-                        </div>
-                        <div class="feature-title">Food Safety Caoch</div>
-                        <div class="feature-detail">
-                            Food allergens
-                        </div>
-                    </div>
+	    <div class="header">
+		<div class="title">
+		    <a href=""><span class="title-left">OPEN</span><span class="title-right">EATS</span></a>
+		</div>
+		<div class="nav-div">
+		    <ul class="nav nav-pills">
+			<li>
+			<a href="about">About</a>
+			</li>
+			<li>
+			<a href="services">Service</a>
+			</li>
+			<li>
+			<a href="mailto:xuehung@gmail.com">Contact</a>
+			</li>
+		    </ul>
+		</div>
+	    </div>
+	<div class="wrapper">
+	    <div class="header-bg"></div>
+	    <div class="content">
+		<div class="main-section">
+		    <div id="left-section" class="pull-left">
+			<div class="feature-box">
+			    <div class="pull-left">
+				<img src="img/icon_coach.png" />
+			    </div>
+			    <div class="feature-title">Food Safety Coach</div>
+			    <div class="feature-detail">
+				Food allergens
+			    </div>
+			</div>
 
-                    <div class="feature-box">
-                        <div class="pull-left">
-                            <img src="img/icon_testing.png" />
-                        </div>
-                        <div class="feature-title">Personal Food
-                            Testing</div>
-                        <div class="feature-detail">
-                            Drinks, Snacks, Meats, Processed foods,
-                            Functional foods
-                        </div>
-                    </div>
+			<div class="feature-box">
+			    <div class="pull-left">
+				<img src="img/icon_testing.png" />
+			    </div>
+			    <div class="feature-title">Personal Food
+				Testing</div>
+			    <div class="feature-detail">
+				Drinks, Snacks, Meats, Processed foods,
+				Functional foods
+			    </div>
+			</div>
 
-                    <div class="feature-box">
-                        <div class="pull-left">
-                            <img src="img/icon_magazine.png" />
-                        </div>
-                        <div class="feature-title">Food Magazine</div>
-                        <div class="feature-detail">
-                            Test foods that made headlines. Make
-                            food recommendations
-                        </div>
-                    </div>
+			<div class="feature-box">
+			    <div class="pull-left">
+				<img src="img/icon_magazine.png" />
+			    </div>
+			    <div class="feature-title">Food Magazine</div>
+			    <div class="feature-detail">
+				Test top-concerned foods. Make food recommendations
+			    </div>
+			</div>
 
-                    <div class="feature-box">
-                        <div class="pull-left">
-                            <img src="img/icon_gatekeeper.png" />
-                        </div>
-                        <div class="feature-title">Consumer Gatekeeper</div>
-                        <div class="feature-detail">
-                            Tracking food quality of restaurant chains
-                        </div>
-                    </div>
-                </div>
-                <div id="right-section" class="pull-right">
-                    <div class="video">
-                        <span>VIDEO</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="footer text-center">
-            <span class="copyright">&copy; Copyright 2013, OPENEATS</span>
-        </div>
+			<div class="feature-box">
+			    <div class="pull-left">
+				<img src="img/icon_gatekeeper.png" />
+			    </div>
+			    <div class="feature-title">Consumer Gatekeeper</div>
+			    <div class="feature-detail">
+				Tracke food from restaurant chains
+			    </div>
+			</div>
+		    </div>
+		    <div id="right-section" class="pull-right">
+			<div class="video">
+			    <span>VIDEO</span>
+			</div>
+		    </div>
+		</div>
+
+
+		<hr>
+
+
+		<div class="about-section section">
+		    <h1 class="section-title">About</h1>
+		    <div class="row">
+			<div class="col-lg-7">
+			    <img width="95%" src="http://www.businesstoday.com.tw/images/103190/AB355B6E-E8C7-4FAA-B674-0151D1E4BB9C">
+			</div>
+			<div class="col-lg-5">
+			    <p>
+			    In the past few years, Taiwan has been going through many food safety crises. Products like packaged drinks, oil, instant noodles and milk were once reported containing illegally-added chmicals which could did harm to our health. Which made it so sarcastic was that some products were in our daily meal. We ate them everyday for more than a decade. Even the leading food brands lost people's trust.</p>
+			    <p>Which food can we trust? These products should not go into our mouths. We don't want to eat them. But how can we do to avoid eating them. How do we know the food in my mouth is safe or not. In this case, we came up with the idea - <font style="font-weight:bold">OpenEats</font>!
+			    </p>
+			</div>
+		    </div>
+			<br>
+		    <div class="row">
+			<div class="col-lg-4" style="padding: 120px 0;">
+			    <p style="">Our team includes people specializing in different areas. We have PMs, businessmen, developers and designers. We are a cool team and paossionate in Openeats project. And with no doubt, we are the people who would never put those unsafe food in the mouth.
+			    </p>
+			</div>
+			<div class="col-lg-8">
+			    <img class="pull-right" src="img/team.png">
+			</div>
+		    </div>
+		</div>
+
+
+		<hr>
+
+
+		<div class="services-section section">
+		    <div class="service">
+			<h1 class="section-title">Food Safety Coach</h1>
+		    </div>
+
+		    <div class="service">
+			<h1 class="section-title">Personal Food Testing</h1>
+		    </div>
+
+		    <div class="service">
+			<h1 class="section-title">Food Maganzine</h1>
+		    </div>
+
+		    <div class="service">
+			<h1 class="section-title">Consumer Gatekeeper</h1>
+		    </div>
+
+		</div>
+	    </div>
+	</div>
+	<div class="footer text-center">
+	    <span class="copyright">&copy; Copyright 2013, OPENEATS</span>
+	</div>
     </body>
 </html>
