@@ -6,7 +6,10 @@ body {
 }
 hr {
     margin: 40px 0;
-    height: 5px;
+    border: 0; 
+    height: 5px; 
+    background-color: #d4d4d4;
+    color: #d4d4d4
 }
 
 h3 {
@@ -121,7 +124,7 @@ div.video {
 
 div.section p {
     font-family: Arial;
-    font-size: 13px;
+    font-size: 14px;
     text-align: justify;
     line-height: 20px;
 }
@@ -149,15 +152,47 @@ div.footer {
 .section-title {
     font-family: Arial;
     font-size: 26px;
-    color: #777777;
+    color: #534c9f;
     font-weight: bold;
 }
 
+.service-title{
+    font-family: Arial;
+    font-size: 20px;
+    color: #666666;
+}
+
+.service-frame {
+    background-color: #dbdae9;
+    border-radius: 8px;
+    margin-top: 30px;
+    height: 300px;
+    width: 420px;
+    margin: 24px 24px 24px 24px;
+    padding: 24px 24px 40px 24px;
+    float: left;
+}
+
+
+
+
+
 /* CSS modification for Bootstrap */
 
+.form-horizontal .control-label {
+    text-align: left;
+}
+
 .nav li a:focus, .nav li a:hover {
-    color: #534c9f;
     border-bottom: 4px #534c9f;
+    border-bottom-style: solid;
+    background-color: inherit;
+    color: #777;
+    border-radius: 0;
+}
+.nav li a:focus {
+}
+.nav li a:hover {
 }
 
 
