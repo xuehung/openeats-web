@@ -5,7 +5,7 @@ body {
     background-repeat: no-repeat;
 }
 hr {
-    margin: 40px 0;
+    margin: 50px 0;
     border: 0; 
     height: 5px; 
     background-color: #d4d4d4;
@@ -70,11 +70,6 @@ div.title a:hover {
     /*position:relative; top: -25px; left: 820px;*/   
 }
 
-.nav li a {
-    font-family: Arial;
-    color: #726399;
-    font-size: 16px;
-}
 
 .main-section {
     height: 350px;
@@ -175,24 +170,42 @@ div.footer {
 
 
 
-
-
 /* CSS modification for Bootstrap */
 
 .form-horizontal .control-label {
     text-align: left;
 }
 
-.nav li a:focus, .nav li a:hover {
+.nav li a {
+    font-family: Arial;
+    color: #726399;
+    font-size: 16px;
+	border-bottom: 4px;
+	border-color: transparent;
+    border-bottom-style: solid;
+	font-weight: bold;
+}
+
+.nav li a:hover {
+    border-bottom: 4px #726399;
+    border-bottom-style: solid;
+    background-color: inherit;
+    color: #726399;
+    border-radius: 0;
+}
+
+.nav li a:active {
     border-bottom: 4px #534c9f;
     border-bottom-style: solid;
     background-color: inherit;
-    color: #777;
+    color: #534c9f;
     border-radius: 0;
 }
-.nav li a:focus {
-}
-.nav li a:hover {
+
+.nav li a.nav-clicked {
+	border-bottom: 4px #726399;
+	border-radius: 0;
+	border-bottom-style: solid;
 }
 
 
