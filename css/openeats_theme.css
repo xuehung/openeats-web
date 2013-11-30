@@ -25,10 +25,10 @@ div.wrapper {
 }
 
 div.header-bg {
-    height: 150px; /*200*/
+    height: 30px; /*200*/
     /*background: url('../img/banner.png');*/
     background-repeat:no-repeat;  
-    margin-top: 28px;
+    margin-top: 16px;
   
 }
 
@@ -210,6 +210,63 @@ div.footer {
 
 
 
+
+
+.css_btn_class {
+	font-size:14px;
+	font-family:Arial;
+	font-weight:normal;
+	-moz-border-radius:8px;
+	-webkit-border-radius:8px;
+	border-radius:8px;
+	/*border:1px solid #ffffff;*/
+	padding:4px 17px;
+	text-decoration:none;
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(5%, #7067cd), color-stop(100%, #544da1) );
+	background:-moz-linear-gradient( center top, #7067cd 5%, #544da1 100% );
+	background:-ms-linear-gradient( top, #7067cd 5%, #544da1 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#7067cd', endColorstr='#544da1');
+	background-color:#7067cd;
+	color:#ffffff;
+	display:inline-block;
+}.css_btn_class:hover {
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(5%, #9a93e0), color-stop(100%, #544da1) );
+	background:-moz-linear-gradient( center top, #9a93e0 5%, #544da1 100% );
+	background:-ms-linear-gradient( top, #9a93e0 5%, #544da1 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#9a93e0', endColorstr='#544da1');
+	background-color:#9a93e0;
+	
+	font-size:14px;
+	font-family:Arial;
+	font-weight:normal;
+	color:#ffffff;
+	text-decoration:none;
+}.css_btn_class:active {
+	position:relative;
+	top:1px;
+	
+	font-size:14px;
+	font-family:Arial;
+	font-weight:normal;
+	color:#bdbdbd;
+	text-decoration:none;
+	
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(5%, #544da1), color-stop(100%, #6f66cc) );
+	background:-moz-linear-gradient( center top, #544da1 5%, #6f66cc 100% );
+	background:-ms-linear-gradient( top, #544da1 5%, #6f66cc 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#544da1', endColorstr='#6f66cc');
+	background-color:#544da1;
+	
+	
+}
+
+.vote_btn_area {
+    margin: 132px 0 0 120px;
+}
+
+#vote-link {
+	color: #df3535;
+}
 
 
 
