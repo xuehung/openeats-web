@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <link rel="icon" type="image/ico" href="img/favicon.ico"/>
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+		<link rel="stylesheet" href="css/jquery.fancybox-1.3.4.css" type="text/css" media="screen" />
+
+        <title>OpenEats_vote</title>
+
+    <body background="../bg_vote.png">
+		<div id="countdown">
+			<div style="padding:8px 0 0 16px;">
+			投票倒數時間：
+			<span id="day">0</span> 天
+			<span id="hour">0</span> 時
+			<span id="minute">0</span> 分
+			<span id="second">0</span> 秒
+			</div>
+		</div>
+		<script>
+			// set the date we're counting down to
+			var target_date = new Date("Dec 7, 2013").getTime();
+
+			// variables for time units
+			var days, hours, minutes, seconds;
+
+			// get tag element
+			var countdown = document.getElementById("countdown");
+
+			// update the tag with id "countdown" every 1 second
+			setInterval(function () {
+
+			// find the amount of "seconds" between now and target
+			var current_date = new Date().getTime();
+			var seconds_left = (target_date - current_date) / 1000;
+
+			// do some time calculations
+			days = parseInt(seconds_left / 86400);
+			seconds_left = seconds_left % 86400;
+			
+			hours = parseInt(seconds_left / 3600);
+			seconds_left = seconds_left % 3600;
+			
+			minutes = parseInt(seconds_left / 60);
+			seconds = parseInt(seconds_left % 60);
+			
+			// format countdown string + set tag value
+			var content = "<span id='day'>" + days + "</div>" + 
+			"<span id='hour'>" + hours + "</div>" + 
+			"<span id='minute'>" + minutes + "</div>" + 
+			"<span id='second'>" + seconds + "</div>";
+			//alert(countdown);
+			
+			document.getElementById("day").innerHTML = days;
+			document.getElementById("hour").innerHTML = hours;
+			document.getElementById("minute").innerHTML = minutes;
+			document.getElementById("second").innerHTML = seconds;
+			//countdown.innerHTML = content;
+
+		}, 1000);
+		</script>
+		
+        <div style="padding:10px 0 0 15px; font-size: 11px; color:#529ee2">
+            <a href="http://openeats.co/" target="_blank">go to OPENEATS website</a> | 
+            <a href="https://www.facebook.com/openeats" target="_blank">FACEBOOK</a>
+        </div>
+        <div class="vote_description">
+        	<img src="img/vote_process_website.png"/>
+        </div>
+    </body>
+</html>
