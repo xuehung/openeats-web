@@ -25,12 +25,10 @@
 		<link rel="stylesheet" href="css/jquery.fancybox-1.3.4.css" type="text/css" media="screen" />
 
         <title>OpenEats Vote</title>
-        <FRAMESET cols="40%,60%">
-            <FRAME src="vote_image.html"/ FRAMEBORDER=NO FRAMESPACING=0 BORDER=0>
-            <FRAME src="http://startupbattle.agorize.com/en/juries/11/votables?votable_id=927"/FRAMEBORDER=NO FRAMESPACING=0 BORDER=0>
-        </FRAMESET>
-</FRAMESET>
+
     </head>
-    <body>
-    </body>
+         <frameset border="0" cols="40,60">
+            <frame id="SideMenu" name="SideMenu" src="vote_image.html" FRAMEBORDER=NO FRAMESPACING=0 BORDER=0>
+            <frame id="MainPage" name="MainPage" src="http://startupbattle.agorize.com/en/juries/11/votables?votable_id=927" FRAMEBORDER=NO FRAMESPACING=0 BORDER=0 scrolling="auto" />
+        </frameset>
 </html>
