@@ -132,7 +132,7 @@ div.video {
 	height: 600px;
 	font-family: Arial;
 	padding: 50px 200px 50px 200px;
-	font-weight: bold;
+	/*font-weight: bold;*/
 }
 
 #home h1 {
@@ -176,6 +176,22 @@ div.video {
 
 #footer img {
 	margin-right: 5px;
+}
+
+#value h2 {
+	color: #356b00;
+	font-size: 30px;
+}
+
+#value p {
+	color: #356b00;
+	font-size: 16px;
+}
+
+#value h3 {
+	color: #356b00;
+	font-size: 16px;
+	font-weight: bold;
 }
 
 
