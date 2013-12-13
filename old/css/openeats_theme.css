@@ -1,5 +1,8 @@
 body {
-    
+    background-color: #fff;
+    background-image: url('../img/bg.png');
+    background-position: -150px -30px;
+    background-repeat: no-repeat;
 }
 hr {
     margin: 50px 0;
@@ -18,36 +21,22 @@ h3 {
 div.wrapper {
     /*height: 600px;*/
     width: 1000px;
-    margin: 0 auto;
+    margin: 0 auto;    
 }
 
-.arrow-down-wrapper {
-	position:relative;
+div.header-bg {
+    height: 30px; /*200*/
+    /*background: url('../img/banner.png');*/
+    background-repeat:no-repeat;  
+    margin-top: 16px;
+  
 }
-
-.arrow-down {
-	width: 42px;
-	height: 42px;
-	background-image: url('../img/arrow_down.png');
-	position:absolute;
-	left: 47%;
-	top: -70px;
-    z-index: 10;
-}
-.arrow-down:hover
-{ cursor: pointer; }
 
 div.header {
-    background-color: #f5f5f5;
+    position: fixed;
+    top: 0;
     width: 100%;
-	height: 55px;
-	padding: 0 50px 0 50px;
-	position:fixed;
-	z-index: 20;
-}
-
-div#header-blank {
-	height: 55px; /*this should be the same as div.header*/
+    z-index: 999;    
 }
 
 div.title {
@@ -57,7 +46,7 @@ div.title {
 }
 
 img#logo {
-	margin-top: 10px;
+	margin-top: 7px;
 }
 
 div.title a:hover {
@@ -77,7 +66,7 @@ div.title a:hover {
 }
 
 .nav-div {
-    margin-top: 10px;
+    margin-top: 20px;
     /*position:relative; top: -25px; left: 820px;*/   
 }
 
@@ -127,57 +116,6 @@ div.video {
     font-size: 11px;
     color: #bdbdbd;
 }
-
-.section {
-	height: 600px;
-	font-family: Arial;
-	padding: 50px 200px 50px 200px;
-	font-weight: bold;
-}
-
-#home h1 {
-	color: #fff;
-	font-size: 42px;
-}
-
-#home h3 {
-	color: #adaadb;
-	font-size: 22px;
-}
-
-#whatwedo h2 {
-	color: #dbdae9;
-	font-size: 30px;
-	font-weight: bold;
-}
-
-#whatwedo h4 {
-	color: #dbdae9;
-	font-size: 14px;
-}
-
-#usertest h3 {
-	color: #434343;
-	font-size: 24px;
-}
-
-#team h3 {
-	color: #c9c4ff;
-	font-size: 30px;
-}
-#team .member-name {
-	color: #b4b0e4;
-	font-size: 16px;
-}
-
-#team img {
-	width: 150px;
-}
-
-#footer img {
-	margin-right: 5px;
-}
-
 
 div.section p {
     font-family: Arial;
@@ -329,13 +267,6 @@ div.footer {
 #vote-link {
 	color: #df3535;
 }
-
-.vote_description {
-    font-size: 12px;
-    color: #25285b;
-    line-height: 14px;
-}
-
 
 
 
