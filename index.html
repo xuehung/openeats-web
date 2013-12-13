@@ -8,43 +8,66 @@
         <link rel="icon" type="image/ico" href="img/favicon.ico"/>
         <link rel="stylesheet" href="css/bootstrap.min.css">
         <link rel="stylesheet" type="text/css" href="css/openeats_theme.css">
+		<link rel="stylesheet" href="css/jquery.fancybox-1.3.4.css" type="text/css" media="screen" />
 
         <title>OpenEats</title>
 		
 	
 		<script src="http://code.jquery.com/jquery-1.4.4.min.js"></script>
 		
+		<script type="text/javascript" src="js/jquery.fancybox-1.3.4.pack.js"></script>
+
         <script type="text/javascript">
             $(function(){
-				$(window).scroll(function(){
-                    var h = $(this).scrollTop();
-					$( "div.section" ).each(function( index ) {
-						//alert($(this).attr('id'));
-						//alert($(this).offset().top);
-						//alert(h);
-						var distance = $(this).height()/3;
-						if(h<$(this).offset().top+distance*2 && h>$(this).offset().top-distance) {
-							//alert(($(this).offset().top - h)+$(this).attr('id'));
-							var target = 'a[href="'+$(this).attr('id')+'"]';
+                    $(window).scroll(function(){
+                        var h = $(this).scrollTop();
+                        if(h<30) {
+                                level = 0;
+                                marginh = 30;
+                                log_h = 75;
+                                nav_top = 20;
+                                margin_left = 25;
+                        }
+                        else if(h>=30 && h<130) {
+                                ratio =  ((h-30)/(130-30));
+                                level = ratio*0.95;
+                                marginh = 30 * (1-ratio);
+                                log_h = 35 + 40 * (1-ratio);
+                                nav_top = 20 * (1-ratio);
+                                margin_left = 25 * (1-ratio);
+                        }
+                        if(h >= 130) {
+                                level = 0.95;
+                                marginh = 0;
+                                log_h = 35;
+                                nav_top = 0;
+                                margin_left = 0;
+                        }
+                        $('div.header').css('background-color', 'rgba(230, 240, 240, '+level+')');
+                        $('div#header-top-margin').css('height', marginh);
+                        $('img#logo').css('height', log_h + 'px');
+                        $('div.title').css('margin-left', margin_left + 'px');
+                        $('div.nav-div').css('margin-top', nav_top);
+                    });
+
+                        $('.nav a').click(function(){
+                            target = 'div.'+$(this).attr('href')+'-section';
+                            height = $(target).offset().top - 80;
+                            $("html, body").animate({ scrollTop: height }, 400);
 							$('.nav a').removeClass('nav-clicked');
-							$(target).addClass('nav-clicked');
-							return false;
-						}
-					});
-				});
-                $('.nav a').click(function(){
-					target = 'div#'+$(this).attr('href');
-					height = $(target).offset().top - 30;
-					$("html, body").animate({ scrollTop: height }, 400);
-					$('.nav a').removeClass('nav-clicked');
-					$(this).addClass('nav-clicked');
-					return false;
-                });   
-				$('.arrow-down').click(function(){
-					target = $(this).parent().parent();
-					height = $(target).offset().top - 30;
-					$("html, body").animate({ scrollTop: height }, 400);
-                });
+							$(this).addClass('nav-clicked');
+                            return false;
+                        });
+                        $('#logo').click(function(){
+                            $("html, body").animate({ scrollTop: 0 }, 400);
+                            return false;
+                        });
+						
+						$("a#inline").fancybox({
+							'hideOnContentClick': false,
+							'autoDimensions': true,
+							'scrolling': 'no'
+						});
 						
 						//$("a#inline").click();
             });
@@ -63,175 +86,188 @@
     </head>
     <body>
         <div class="header">
-                <div class="title pull-left">
-					<a href=""><img id="logo" src="img/openeats_logo.png"></a>
+            <div style="width:1000px;margin: 0 auto;">
+			<!--
+                    <div style="height : 40px; width : 31px; padding-top: 12px;" class="pull-left">
+                        <a href="https://www.facebook.com/openeats" target="_blank"><img src="img/icon_facebook_32.png"/></a>
+                    </div>
+                    <div style="height : 40px; width : 31px; padding-top: 12px;" class="pull-left">
+                        <a href="https://plus.google.com/108326826239426590613/posts" target="_blank"><img src="img/icon_google_plus_32.png"/></a>
+                    </div>
+					-->
+                <div id="header-top-margin" style="height: 40px;">
+                    <!--
+                    <div style="height : 40px; width : 42px; float : left; padding-top: 10px;">
+                        <a href="https://www.facebook.com/openeats" target="_blank"><img src="img/icon_facebook_32.png"/></a>
+                    </div>
+                    <div style="height : 40px; width : 42px; float : left; padding-top: 10px;">
+                        <a href="https://plus.google.com/108326826239426590613/posts" target="_blank"><img src="img/icon_google_plus_32.png"/></a>
+                    </div>
+                    -->
                 </div>
-				
+                <div class="title pull-left">
+					<a href=""><img id="logo" src="img/logo.png"></a>
+					<!--
+                    <a href=""><span class="title-left">OPEN</span><span class="title-right">EATS</span></a>-->
+                </div>
+				<div class="nav-div pull-right" style="margin-right: 0px;">
+					<div style="margin-top: 10px;">
+					<a href="https://www.facebook.com/openeats" target="_blank"><img src="img/icon_facebook_32.png"/></a>
+					<a href="https://plus.google.com/108326826239426590613/posts" target="_blank"><img src="img/icon_google_plus_32.png"/></a>
+					</div>
+				</div>
                 <div class="nav-div pull-right" style="margin-right: 30px;">
                     <ul class="nav nav-pills">
                         <li>
-                        <a href="home" class="nav-clicked">Home</a>
+                        <a href="about">About</a>
                         </li>
                         <li>
-                        <a href="whatwedo">What We Do</a>
+                        <a href="services">Service</a>
                         </li>
                         <li>
-                        <a href="usertest">User Test</a>
-                        </li>
-						<li>
-                        <a href="value">Value</a>
-                        </li>
-						<li>
-                        <a href="team">Team</a>
-                        </li>
-						<li>
                         <a href="contact">Contact</a>
                         </li>
                     </ul>
                 </div>
+            </div>
         </div>
-		<div id="header-blank"></div>
-		<div class="section" id="home" style="background-color: #6059aa;">
-			<div class="row">
-				<div class="col-lg-7" style="padding-right: 50px;">
-					<h1> 
-					OpenEats recommends the best food for you. 
-					</h1>
-					<h3>Which food can we trust?</h3>
-					<h3>How do we know whether the food in my mouth is safe or not?</h3>
-				</div>
-				<div class="col-lg-5">
-					<img src="img/phone_ui01.png">
-				</div>
-			</div>
-		</div>
-		
-		<div class="section" id="whatwedo" style="background-color: #373458; height:630px;">
-			<div class="arrow-down-wrapper"><div class="arrow-down"></div></div>
-			<div class="row">
-				<div class="col-lg-7">
-					<h2> Food Safety Coach</h2>
-					<h4>Are you allergic to some food? <h4/>
-					<h4>Food safety coach tells you which food you should avoid from.<h4/>
-					<img src="img/icon_nuts_free.png">
-					<img src="img/icon_suger_free.png">
-					<img src="img/icon_egg_free.png">
-					<img src="img/icon_shellfish_free.png">
-					<h4>Are you on a diet? <h4>
-					<h4>Let food safety coach guide your daily selection.</h4>
-					<img src="img/icon_diet01.png">
-					<img src="img/icon_diet02.png">
-				</div>
-				<div class="col-lg-5">
-					<h2> Personal Food Testing</h2>
-					<h4>Provide door-to-door food testing service, which is fast, convenient and customized to user's need.</h4>
-					<img src="img/d2d.png">
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-lg-7">
-					<h2> Food Scoop</h2>
-					<h4>Track top concerned food in the market.</h4>
-					<h4>All the reports will be organized and interpreted as figures, charts and sentences which people can easily understand.</h4>
-					<img src="img/food_scoop.png">
-				</div>
-				<div class="col-lg-5">
-					<h2> Consumer Gatekeeper</h2>
-					<h4>Track food from restaurant chains.</h4>
-					<h4>Users will be encouraged to donate a small amount of money to test food from the most popular restaurant chains.</h4>
-					<img src="img/restaurant-chains.png">
-				</div>
-			</div>
-		</div>
-		
-		<div class="section text-center" id="usertest" 
-			style="background-color: #f3f3f3; padding: 50px 150px 50px 150px;">
-			<div class="arrow-down-wrapper"><div class="arrow-down"></div></div>
-			<h3>We interviewed 20 users in supermarkets, 18 users said yes for food test paid by themselves.</h3>
+        <div class="wrapper">
+            <div class="header-bg">
+                <div class="vote_btn_area">
+                    <img src="img/flag-hot-red.png"/><a id="vote-link" href="http://goo.gl/lLqwUw" target="_blanc" color="#df3535">投我們一票拿禮物! Vote for Us! Win the Gift!</a>
+                </div>
+            </div>
+            <div class="content">
+                <div class="main-section">
+                    <div id="left-section" class="pull-left">
+                        <div class="feature-box">
+                            <div class="pull-left">
+                                <img src="img/icon_coach.png" />
+                            </div>
+                            <div class="feature-title">Food Safety Coach</div>
+                            <div class="feature-detail">
+                                Food allergens
+                            </div>
+                        </div>
 
-			<h3>The price ranges from $20 to $200.</h3>
+                        <div class="feature-box">
+                            <div class="pull-left">
+                                <img src="img/icon_testing.png" />
+                            </div>
+                            <div class="feature-title">Personal Food
+                                Testing</div>
+                            <div class="feature-detail">
+                                Drinks, Snacks, Meats, Processed foods,
+                                Functional foods
+                            </div>
+                        </div>
 
-			<h3>All the users care about what they eat. Is it safe? Is it real food? Is it suitable for them?</h3>
-			<br><br><br>
-			<div class="row">
-				<div class="col-lg-4">
-					<img src="img/user_test01.png" class="img-circle">
-				</div>
-				<div class="col-lg-4">
-					<img src="img/user_test02.png" class="img-circle">
-				</div>
-				<div class="col-lg-4">
-					<img src="img/user_test03.png" class="img-circle">
-				</div>
-			</div>
-		</div>
-		
-		<div class="section" id="value" style="background-color: #9ac437">
-			<div class="arrow-down-wrapper"><div class="arrow-down"></div></div>
-			<div class="row">
-				<div class="col-lg-7" style="padding-right: 50px;">
-					<h2>Food recommendation engine</h2>
-					<h2>Food value database</h2>
-					<h2>Information diagramming</h2>
-					<br>
-					<p>Users began to  use APP OpenEats, the use of crowdsourcing collect food ingredient labeling, combined with the back-end programmers and professional nutritionists, food value to establish a database analysis of disease associated with food.</p>
-					
-					<p>Openeats will also provide each user a personalized set of health status, the initiative is recommended for individuals with physical state constitution food.</p>
+                        <div class="feature-box">
+                            <div class="pull-left">
+                                <img src="img/icon_magazine.png" />
+                            </div>
+                            <div class="feature-title">Food Scoop</div>
+                            <div class="feature-detail">
+                                Test top-concerned foods. Make food recommendations
+                            </div>
+                        </div>
 
-					<h3>Long-term goal</h3>
-					<p>The food value database. We have a Data Mining technology experts, users can tap the characteristics (Personal Profiling), target market (Targeted Marketing) and market analysis (Market-Basket Analysis) and so on can have a variety of business activities added applications.</p>
-				</div>
-				<div class="col-lg-5">
-					<img style="width:378px;" src="img/value.png">
-				</div>
-			</div>
-		</div>
-		
-		<div class="section text-center" id="team" style="background-color: #6059aa">
-			<div class="arrow-down-wrapper"><div class="arrow-down"></div></div>
-			<h3>We are the people who want to put safe food in your mouth.</h3>
-			<br><br>
-			<div class="row">
-				<div class="col-lg-3">
-					<img src="img/member_ellis.png" class="img-circle">
-					<h4 class="member-name">Ellis, PM</h4>
-				</div>
-				<div class="col-lg-3">
-					<img src="img/member_CK.png" class="img-circle">
-					<h4 class="member-name">CK, Data Expert</h4>
-				</div>
-				<div class="col-lg-3">
-					<img src="img/member_water.png" class="img-circle">
-					<h4 class="member-name">Water, iOS Developer</h4>
-				</div>
-				<div class="col-lg-3">
-					<img src="img/member_eddie.png" class="img-circle">
-					<h4 class="member-name">Eddie, Designer</h4>
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-lg-3">
-					<img src="img/member_george.png" class="img-circle">
-					<h4 class="member-name">George, Android Developer</h4>
-				</div>
-				<div class="col-lg-3">
-					<img src="img/member_mike.png" class="img-circle">
-					<h4 class="member-name">Mike, Database Developer</h4>
-				</div>
-				<div class="col-lg-3">
-					<img src="img/member_beti.png" class="img-circle">
-					<h4 class="member-name">Beti, GUI Developer</h4>
-				</div>
-				<div class="col-lg-3">
-					<img src="img/member_lee.png" class="img-circle">
-					<h4 class="member-name">Lee, Android Developer</h4>
-				</div>
-			</div>
-		</div>
-		
-		<div class="section" id="contact" style="background-color: #fff">
-			<div class="arrow-down-wrapper"><div class="arrow-down"></div></div>
-			<h1 class="section-title">Contact</h1>
+                        <div class="feature-box">
+                            <div class="pull-left">
+                                <img src="img/icon_gatekeeper.png" />
+                            </div>
+                            <div class="feature-title">Consumer Gatekeeper</div>
+                            <div class="feature-detail">
+                                Tracke food from restaurant chains
+                            </div>
+                        </div>
+                    </div>
+                    <div id="right-section" class="pull-right">
+
+                        <div class="video">
+<iframe src="http://player.vimeo.com/video/80542968" width="360" height="270" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+                        </div>
+                    </div>
+                </div>
+
+                <hr>
+
+
+                <div class="about-section section">
+                    <h1 class="section-title">About</h1>
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <img src="img/img_about.png">
+                        </div>
+                        <div class="col-lg-6">
+                            <h3>
+                             <p>
+                             In the past few years, Taiwan has been going through many food safety crises. Products like packaged drinks, oil, instant noodles and milk were once reported containing illegally-added chemicals which could did harm to our health. Which made it so sarcastic was that some products were in our daily meal. We ate them everyday for more than a decade. Even the leading food brands lost people's trust.</p>
+                             <p>Which food can we trust? These products should not go into our mouths. We don't want to eat them. But how can we do to avoid eating them. How do we know the food in my mouth is safe or not. In this case, we came up with the idea - <font style="font-weight:bold">OpenEats</font>!
+                             </p>
+                             </h3>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <h3><p>
+                            Our team includes people specializing in different areas. We have PMs, businessmen, developers and designers. We are a cool team and passionate in OpenEats project. And with no doubt, we are the people who would never put those unsafe food in the mouth.
+                            </p>
+							<p>OpenEats is a startup grown out of the <a href="http://food.codefortomorrow.org" target="_blank">Open Food Project</a>, organized by <a href="http://codefortomorrow.org" target="_blank"> Code for Tomorrow</a>.</p>
+							</h3>
+                        </div>
+                        <div class="col-lg-5">
+                            <img class="pull-right" src="img/team.png">
+                        </div>
+                    </div>
+                </div>
+
+
+                <hr>
+
+
+                <div class="services-section section">
+                    <h1 class="section-title">Services</h1>
+                            <div class="row" style="margin-left: 35px;">
+                                <div>
+                                    <div class="service-frame ">
+                                        <div class="service-title">Food Safety Coach</div>
+                                            <h3>Are you allergic to some food? 
+                                            Food safety coach tells you which food you should avoid from.</h3>
+                                            <img src="img/icon_nuts_free.png">
+                                            <img src="img/icon_suger_free.png">
+                                            <img src="img/icon_shellfish_free.png">
+                                            <img src="img/icon_egg_free.png"> 
+                                            <h3>Are you on a diet? 
+                                            Let food safety coach guide your daily selection.</h3>
+                                            <img src="img/icon_diet01.png">
+                                            <img src="img/icon_diet02.png">
+                                    </div>
+                                    <div class="service-frame ">
+                                            <div class="service-title">Personal Food Testing</div>
+                                            <h3>Provide door-to-door food testing service, 
+                                            which is fast, convenient and customized to user's need.</h3>
+                                            <img src="img/d2d.png">
+                                    </div>
+                                    <div class="service-frame ">
+                                        <div class="service-title">Food Scoop</div>
+                                        <h3>Track top concerned food in the market.
+                                        All the reports will be organized and interpreted as figures, charts and sentenceswhich members can easily understand.</h3>
+                                        <img src="img/food_scoop.png">
+                                    </div>
+                                    <div class="service-frame ">
+                                        <div class="service-title">Consumer GateKeeper </div>
+                                        <h3>Track food from restaurant chains. Users will be encouraged to donate a small amount of money to test food from the most popular restaurant chains.
+                                        </h3>
+                                        <img src="img/restaurant-chains.png">
+                                    </div>
+                                </div>
+                </div>
+  
+                <hr>
+
+                <div class="contact-section section" style="margin-bottom:200px;">
+                    <h1 class="section-title">Contact</h1>
                     <form id="contact-form" class="form-horizontal" role="form">
 						
                         <input type="text" id="contact-nickname">
@@ -297,18 +333,20 @@
 							return false;
 						});
 					</script>
-		</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer text-center">
+            <span class="copyright">&copy; Copyright 2013, OPENEATS</span>
+        </div>
+		<a style="display:none" id="inline" href="#vote">This shows content of element who has id="data"</a>
 		
-		<div class="section" id="footer" 
-			style="background-color: #323232; padding-top:100px; height:400px;">
-			<a href="https://www.facebook.com/openeats" target="_blank">
-				<img src="img/icon_facebook_32.png"/>
-			</a>
-			<a href="https://plus.google.com/108326826239426590613/posts" target="_blank">
-				<img src="img/icon_google_plus_32.png"/>
-			</a>
-			<span class="copyright">&copy; Copyright 2013, OPENEATS</span>
-		</div>
+		<div style="display:none"><div id="vote" style="width:520px">
+			<a target="_blank" class="btn btn-warning" href="http://globalstartupbattle.agorize.com/en/juries/11/votables?votable_id=927"> 投票 </a>
+			<br><br>
+			<img src="img/vote_process_website.png">
+		</div></div>
 		
 		
     </body>

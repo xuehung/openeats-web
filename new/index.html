@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <link rel="icon" type="image/ico" href="img/favicon.ico"/>
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="css/openeats_theme.css">
+
+        <title>OpenEats</title>
+		
+	
+		<script src="http://code.jquery.com/jquery-1.4.4.min.js"></script>
+		
+        <script type="text/javascript">
+            $(function(){
+				$(window).scroll(function(){
+                    var h = $(this).scrollTop();
+					$( "div.section" ).each(function( index ) {
+						//alert($(this).attr('id'));
+						//alert($(this).offset().top);
+						//alert(h);
+						var distance = $(this).height()/3;
+						if(h<$(this).offset().top+distance*2 && h>$(this).offset().top-distance) {
+							//alert(($(this).offset().top - h)+$(this).attr('id'));
+							var target = 'a[href="'+$(this).attr('id')+'"]';
+							$('.nav a').removeClass('nav-clicked');
+							$(target).addClass('nav-clicked');
+							return false;
+						}
+					});
+				});
+                $('.nav a').click(function(){
+					target = 'div#'+$(this).attr('href');
+					height = $(target).offset().top - 30;
+					$("html, body").animate({ scrollTop: height }, 400);
+					$('.nav a').removeClass('nav-clicked');
+					$(this).addClass('nav-clicked');
+					return false;
+                });   
+				$('.arrow-down').click(function(){
+					target = $(this).parent().parent();
+					height = $(target).offset().top - 30;
+					$("html, body").animate({ scrollTop: height }, 400);
+                });
+						
+						//$("a#inline").click();
+            });
+        </script>
+
+	<script>
+	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	  })(window,document,'script','http://www.google-analytics.com/analytics.js','ga');
+
+	  ga('create', 'UA-46056914-1', 'openeats.co');
+	  ga('send', 'pageview');
+
+	</script>
+    </head>
+    <body>
+        <div class="header">
+                <div class="title pull-left">
+					<a href=""><img id="logo" src="img/openeats_logo.png"></a>
+                </div>
+				
+                <div class="nav-div pull-right" style="margin-right: 30px;">
+                    <ul class="nav nav-pills">
+                        <li>
+                        <a href="home" class="nav-clicked">Home</a>
+                        </li>
+                        <li>
+                        <a href="whatwedo">What We Do</a>
+                        </li>
+                        <li>
+                        <a href="usertest">User Test</a>
+                        </li>
+						<li>
+                        <a href="value">Value</a>
+                        </li>
+						<li>
+                        <a href="team">Team</a>
+                        </li>
+						<li>
+                        <a href="contact">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+        </div>
+		<div id="header-blank"></div>
+		<div class="section" id="home" style="background-color: #6059aa;">
+			<div class="row">
+				<div class="col-lg-7" style="padding-right: 50px;">
+					<h1> 
+					OpenEats recommends the best food for you. 
+					</h1>
+					<h3>Which food can we trust?</h3>
+					<h3>How do we know whether the food in my mouth is safe or not?</h3>
+				</div>
+				<div class="col-lg-5">
+					<img src="img/phone_ui01.png">
+				</div>
+			</div>
+		</div>
+		
+		<div class="section" id="whatwedo" style="background-color: #373458; height:630px;">
+			<div class="arrow-down-wrapper"><div class="arrow-down"></div></div>
+			<div class="row">
+				<div class="col-lg-7">
+					<h2> Food Safety Coach</h2>
+					<h4>Are you allergic to some food? <h4/>
+					<h4>Food safety coach tells you which food you should avoid from.<h4/>
+					<img src="img/icon_nuts_free.png">
+					<img src="img/icon_suger_free.png">
+					<img src="img/icon_egg_free.png">
+					<img src="img/icon_shellfish_free.png">
+					<h4>Are you on a diet? <h4>
+					<h4>Let food safety coach guide your daily selection.</h4>
+					<img src="img/icon_diet01.png">
+					<img src="img/icon_diet02.png">
+				</div>
+				<div class="col-lg-5">
+					<h2> Personal Food Testing</h2>
+					<h4>Provide door-to-door food testing service, which is fast, convenient and customized to user's need.</h4>
+					<img src="img/d2d.png">
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-lg-7">
+					<h2> Food Scoop</h2>
+					<h4>Track top concerned food in the market.</h4>
+					<h4>All the reports will be organized and interpreted as figures, charts and sentences which people can easily understand.</h4>
+					<img src="img/food_scoop.png">
+				</div>
+				<div class="col-lg-5">
+					<h2> Consumer Gatekeeper</h2>
+					<h4>Track food from restaurant chains.</h4>
+					<h4>Users will be encouraged to donate a small amount of money to test food from the most popular restaurant chains.</h4>
+					<img src="img/restaurant-chains.png">
+				</div>
+			</div>
+		</div>
+		
+		<div class="section text-center" id="usertest" 
+			style="background-color: #f3f3f3; padding: 50px 150px 50px 150px;">
+			<div class="arrow-down-wrapper"><div class="arrow-down"></div></div>
+			<h3>We interviewed 20 users in supermarkets, 18 users said yes for food test paid by themselves.</h3>
+
+			<h3>The price ranges from $20 to $200.</h3>
+
+			<h3>All the users care about what they eat. Is it safe? Is it real food? Is it suitable for them?</h3>
+			<br><br><br>
+			<div class="row">
+				<div class="col-lg-4">
+					<img src="img/user_test01.png" class="img-circle">
+				</div>
+				<div class="col-lg-4">
+					<img src="img/user_test02.png" class="img-circle">
+				</div>
+				<div class="col-lg-4">
+					<img src="img/user_test03.png" class="img-circle">
+				</div>
+			</div>
+		</div>
+		
+		<div class="section" id="value" style="background-color: #9ac437">
+			<div class="arrow-down-wrapper"><div class="arrow-down"></div></div>
+			<div class="row">
+				<div class="col-lg-7" style="padding-right: 50px;">
+					<h2>Food recommendation engine</h2>
+					<h2>Food value database</h2>
+					<h2>Information diagramming</h2>
+					<br>
+					<p>Users began to  use APP OpenEats, the use of crowdsourcing collect food ingredient labeling, combined with the back-end programmers and professional nutritionists, food value to establish a database analysis of disease associated with food.</p>
+					
+					<p>Openeats will also provide each user a personalized set of health status, the initiative is recommended for individuals with physical state constitution food.</p>
+
+					<h3>Long-term goal</h3>
+					<p>The food value database. We have a Data Mining technology experts, users can tap the characteristics (Personal Profiling), target market (Targeted Marketing) and market analysis (Market-Basket Analysis) and so on can have a variety of business activities added applications.</p>
+				</div>
+				<div class="col-lg-5">
+					<img style="width:378px;" src="img/value.png">
+				</div>
+			</div>
+		</div>
+		
+		<div class="section text-center" id="team" style="background-color: #6059aa">
+			<div class="arrow-down-wrapper"><div class="arrow-down"></div></div>
+			<h3>We are the people who want to put safe food in your mouth.</h3>
+			<br><br>
+			<div class="row">
+				<div class="col-lg-3">
+					<img src="img/member_ellis.png" class="img-circle">
+					<h4 class="member-name">Ellis, PM</h4>
+				</div>
+				<div class="col-lg-3">
+					<img src="img/member_CK.png" class="img-circle">
+					<h4 class="member-name">CK, Data Expert</h4>
+				</div>
+				<div class="col-lg-3">
+					<img src="img/member_water.png" class="img-circle">
+					<h4 class="member-name">Water, iOS Developer</h4>
+				</div>
+				<div class="col-lg-3">
+					<img src="img/member_eddie.png" class="img-circle">
+					<h4 class="member-name">Eddie, Designer</h4>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-lg-3">
+					<img src="img/member_george.png" class="img-circle">
+					<h4 class="member-name">George, Android Developer</h4>
+				</div>
+				<div class="col-lg-3">
+					<img src="img/member_mike.png" class="img-circle">
+					<h4 class="member-name">Mike, Database Developer</h4>
+				</div>
+				<div class="col-lg-3">
+					<img src="img/member_beti.png" class="img-circle">
+					<h4 class="member-name">Beti, GUI Developer</h4>
+				</div>
+				<div class="col-lg-3">
+					<img src="img/member_lee.png" class="img-circle">
+					<h4 class="member-name">Lee, Android Developer</h4>
+				</div>
+			</div>
+		</div>
+		
+		<div class="section" id="contact" style="background-color: #fff">
+			<div class="arrow-down-wrapper"><div class="arrow-down"></div></div>
+			<h1 class="section-title">Contact</h1>
+                    <form id="contact-form" class="form-horizontal" role="form">
+						
+                        <input type="text" id="contact-nickname">
+						
+                        <div class="form-group">
+                            <label for="contact-name" class="col-sm-2
+                                control-label">Name</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control input-lg" id="contact-name" placeholder="Your name">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="contact-email" class="col-sm-2 control-label">Email</label>
+                            <div class="col-sm-10">
+                                <input type="email" class="form-control input-lg" id="contact-email" 
+                                placeholder="Your email with which we can reply you">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="contact-subject" class="col-sm-2
+                                control-label">Subject</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control input-lg"
+                                id="contact-subject" placeholder="Subject">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="contact-message" class="col-sm-2
+                                control-label">Message</label>
+                            <div class="col-sm-10">
+                                <textarea id="contact-message" class="form-control input-lg" rows="3"></textarea>
+                            </div>
+                        </div>
+                        <div class="form-group pull-right">
+                            <div class="col-sm-offset-2 col-sm-10">
+                                <button type="submit" class="btn
+                                    btn-default">Send</button>
+                            </div>
+                        </div>
+                    </form>
+					<script type='text/javascript' src='https://cdn.firebase.com/v0/firebase.js'></script>
+					<script>
+						$('#contact-nickname').hide();
+						$('#contact-form').submit(function(){
+							var nickname = $("#contact-nickname").val();
+							var name = $("#contact-name").val();
+							var email = $("#contact-email").val();
+							var subject = $("#contact-subject").val();
+							var message = $("#contact-message").val();
+
+							// this is used to prevent robot
+							if(nickname != "") {return false;}
+							if(name == "") {alert("Please input your name"); return false;}
+							if(email == "") {alert("Please input your email"); return false;}
+							if(message == "") {alert("Please input your message"); return false;}
+							var myDataRef = new Firebase('https://openeats-contact.firebaseio.com/');
+							myDataRef.push({date: (new Date()).toString(), name: name,email: email, subject: subject, message: message});
+							alert("Thank you. Your message has been sent successfully.");
+							var name = $("#contact-name").val("");
+							var email = $("#contact-email").val("");
+							var subject = $("#contact-subject").val("");
+							var message = $("#contact-message").val("");
+							return false;
+						});
+					</script>
+		</div>
+		
+		<div class="section" id="footer" 
+			style="background-color: #323232; padding-top:100px; height:400px;">
+			<a href="https://www.facebook.com/openeats" target="_blank">
+				<img src="img/icon_facebook_32.png"/>
+			</a>
+			<a href="https://plus.google.com/108326826239426590613/posts" target="_blank">
+				<img src="img/icon_google_plus_32.png"/>
+			</a>
+			<span class="copyright">&copy; Copyright 2013, OPENEATS</span>
+		</div>
+		
+		
+    </body>
+</html>
