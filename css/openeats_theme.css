@@ -1,16 +1,38 @@
-body {
-    
-}
-hr {
-    margin: 50px 0;
-    border: 0; 
-    height: 5px; 
-    background-color: #d4d4d4;
-    color: #d4d4d4
+body {font-size: 15px; line-height:28px; font-family:Verdana,"Helvetica Neue",Helvetica,Arial,Georgia,sans-serif;}
+html{}
+::selection{ background-color:#FBFF69; color:#6059aa;}
+
+@font-face {
+	font-family: 'StMarieWebSCThin';
+	src: url('../webfont_StMarie/stmarie-thin_web_sc-webfont.eot');
+	src: url('../webfont_StMarie/stmarie-thin_web_sc-webfont.woff') format('woff'), url('../webfont_StMarie/stmarie-thin_web_sc-webfont.svg#webfonti6QgH8L5') format('svg');
+	font-weight: normal;
+	font-style: normal;
 }
 
+@font-face {
+	font-family: 'StMarieWebThin';
+	src: url('../webfont_StMarie/stmarie-thin_web-webfont.eot');
+	src: url('../webfont_StMarie/stmarie-thin_web-webfont.woff') format('woff'), url('../webfont_StMarie/stmarie-thin_web-webfont.svg#webfontHNmhr3jr') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+
+/* ===== replace bootstrap.min.css ===== */
+.nav>li>a{position:relative;display:block;padding:12px 15px;}
+.col-1,.col-2,.col-3,.col-4,.col-5,.col-6,.col-7,.col-8,.col-9,.col-10,.col-11,.col-12,.col-sm-1,.col-sm-2,.col-sm-3,.col-sm-4,.col-sm-5,.col-sm-6,.col-sm-7,.col-sm-8,.col-sm-9,.col-sm-10,.col-sm-11,.col-sm-12,.col-lg-1,.col-lg-2,.col-lg-3,.col-lg-4,.col-lg-5,.col-lg-6,.col-lg-7,.col-lg-8,.col-lg-9,.col-lg-10,.col-lg-11,.col-lg-12{ margin-bottom:20px;}
+.btn{min-width:120px;}
+.row{/*margin-top:40px;*/}
+.row-fix{margin:0px;}
+
+.section { font-family:"Helvetica Neue",Helvetica,Arial,Georgia,sans-serif; padding: 60px 100px;}
+ 
+ 
+hr { margin:50px 0; border:0; height:5px; background-color:#d4d4d4; color: #d4d4d4; }
+
 h3 {
-    font-family: Arial,Georgia,Serif;
+    font-family:"Helvetica Neue",Helvetica,Arial,Georgia,sans-serif; 
     font-size: 13px;
     color: #666666;
 }
@@ -38,10 +60,9 @@ div.wrapper {
 { cursor: pointer; }
 
 div.header {
-    background-color: #f5f5f5;
-    width: 100%;
-	height: 55px;
-	padding: 0 50px 0 50px;
+    background-color: rgba(255,255,255,0.9);
+    width:100%; /*padding:0 30px;*/
+	height: 56px;
 	position:fixed;
 	z-index: 20;
 }
@@ -50,10 +71,11 @@ div#header-blank {
 	height: 55px; /*this should be the same as div.header*/
 }
 
+@font-face{font-family: myFirstFont; src: url('Courier.ttf'),url('Courier.eot'); /* IE9 */}
 div.title {
     font-family: Courier;
     font-weight: bold;
-    margin-left: 25px;
+    margin-left: 30px;
 }
 
 img#logo {
@@ -76,10 +98,7 @@ div.title a:hover {
     padding: 0;   
 }
 
-.nav-div {
-    margin-top: 10px;
-    /*position:relative; top: -25px; left: 820px;*/   
-}
+.nav-div { margin:0 30px 0 0; height:60px;/*position:relative; top: -25px; left: 820px;*/   }
 
 
 .main-section {
@@ -108,113 +127,133 @@ div.video {
 }
             
 .feature-title {
-    font-family: Arial;
+    font-family:"Helvetica Neue",Helvetica,Arial,Georgia,sans-serif;
     font-size: 24px;
     color: #534c9f;
     padding-top: 5px;
     font-weight: bold;
 }
 
-.feature-detail {
-    font-family: Arial;
+.feature-detail { 
+    font-family:"Helvetica Neue",Helvetica,Arial,Georgia,sans-serif;
     font-size: 14px;
     color: #777777;
     font-weight: bold;
 }
 
-.copyright {
-    font-family: Arial;
-    font-size: 11px;
-    color: #bdbdbd;
-}
-
-.section {
-	height: 610px;
-	font-family: Arial;
-	padding: 50px 200px 50px 200px;
-	/*font-weight: bold;*/
-}
-
-#home h1 {
-	color: #fff;
-	font-size: 42px;
-}
-
+#home{background-color: #6059aa;}
+#home h1 {font-family: 'StMarieWebSCThin', sans-serif; line-height:56px; font-weight:600; color:#fff; font-size: 60px;margin:40px 0 30px 0;}
 #home h3 {
-	color: #adaadb;
-	font-size: 22px;
-}
+    color:#dfddf7; 
+    font-family: 
+    Verdana,"Helvetica Neue",Helvetica,Arial,Georgia,sans-serif; 
+    font-size:18px;
+    font-weight:100;
+    }
 
-#whatwedo h2 {
-	color: #dbdae9;
-	font-size: 30px;
-	font-weight: bold;
-}
 
-#whatwedo h4 {
-	color: #dbdae9;
-	font-size: 14px;
-}
+/* device slider */
+.slider{width:263px; height:460px; margin:40px auto;}
+.device-slider{ margin:0 auto; width:263px; height:460px; overflow:hidden; position:relative;}
+.device-slider ul{ list-style:none; margin:0; padding:0; position:absolute;}
+.device-slider li{}
+.device-slider li img{ vertical-align:bottom; border:none;}
+.slider-num{ width:60px; margin:0 auto; overflow:hidden;}
+.slider-num ul{list-style:none; margin:0; padding:0; width:263px; margin:0 auto; padding-top:15px;}
+.slider-num li{ text-align:center; margin:0 auto; cursor:pointer; float:left; display:block; background:#fff; width:12px; height:12px; -webkit-border-radius:12px; -moz-border-radius:12px; -o-border-radius:12px; margin-right:8px; text-indent:-9999px;}
 
+.num-hover{background:#bbb;}
+
+
+#whatwedo{ background-color: #373458;}
+#whatwedo .what-con{ margin-bottom:10px;}
+#whatwedo .what-con h2 { 
+    margin:0; padding:0; /*border-left:solid 4px #fff; padding-left:8px;*/ 
+    color:#fff; 
+    font-family: 'StMarieWebSCThin', sans-serif; 
+    font-size:40px; 
+    font-weight:800;
+    letter-spacing:-0.03em; 
+    margin-bottom:15px;}
+#whatwedo .what-con h4 {color: #bbb; font-size: 15px; font-family:Verdana,"Helvetica Neue",Helvetica,Arial,Georgia,sans-serif; line-height:20px;}
+#whatwedo p{color: #bbb; font-size: 15px; line-height:24px;}
+div.fix-margin{ margin-bottom:20px;}
+.col-lg-5-fix{ width:46%; }
+.row-col-lg-6-fix{ margin-bottom:30px;}
+
+#usertest{background-color:#eee; padding:50px 150px;}
+#usertest h2{ 
+    color: #555555;
+    width:800px; 
+    margin:20px 0 0 70px; 
+    font-family: 'StMarieWebSCThin', sans-serif; 
+    font-size: 48px; 
+    font-weight:800; 
+    letter-spacing:-0.03em;}
 #usertest h3 {
-	color: #434343;
-	font-size: 24px;
-}
+    width:840px; 
+    margin:10px 0 0 30px; 
+    color: #666; 
+    font-size: 15px; 
+    line-height:26px; 
+    font-family:Verdana,"Helvetica Neue",Helvetica,Arial,Georgia,sans-serif; 
+    }
 
-#team h3 {
-	color: #c9c4ff;
-	font-size: 30px;
-}
+#team{background-color:#6059aa;}
+#team h2{ 
+    width:800px; 
+    margin:0 auto; 
+    color:#dfddf7; 
+    font-family: 'StMarieWebSCThin', 
+    sans-serif; 
+    font-size: 36px; 
+    font-weight:800; 
+    margin-bottom:60px;
+    letter-spacing:-0.03em; 
+    text-align:center;}
+
 #team .member-name {
-	color: #b4b0e4;
-	font-size: 16px;
-}
+    color:#afabdb; 
+    font-size: 15px;
+    font-weight:200;
+    letter-spacing:0.05em; 
+    }
+#team img {width: 140px;}
 
-#team img {
-	width: 150px;
-}
+#footer img {/*margin-right: 5px;*/}
 
-#footer img {
-	margin-right: 5px;
-}
+#value{ background-color:#9ac437;}
+#value h2{
+    margin:0; 
+    padding:0; /*border-left:solid 4px #006C00; padding-left:8px;*/ 
+    color:#006C00; 
+    font-family: 'StMarieWebSCThin', 
+    sans-serif; font-size: 40px; 
+    line-height:48px; 
+    margin-bottom:10px; 
+    font-weight:800;
+    letter-spacing:-0.03em;}
 
-#value h2 {
-	color: #356b00;
-	font-size: 30px;
-}
-
-#value p {
-	color: #356b00;
-	font-size: 16px;
-}
-
-#value h3 {
-	color: #356b00;
-	font-size: 16px;
-	font-weight: bold;
-}
+#value .value-con{ margin-top:30px; font-family:Verdana,"Helvetica Neue",Helvetica,Arial,Georgia,sans-serif;}
+#value .value-con p { color:#356b00; font-size:15px; line-height:24px; }
+#value .value-con h3 {color: #356b00; font-size:18px; margin-top:20px;}
 
 
-div.section p {
-    font-family: Arial;
-    font-size: 14px;
-    text-align: justify;
-    line-height: 20px;
-}
+.contact-section {margin-right: 50px;}
 
-.contact-section {
-    margin-right: 50px;
-}
+.contact-section label {color: #666;}
 
-.contact-section label {
-    color: #666;
-}
+#footer{background-color: #323232; padding:40px 30px; height:160px;}
+.social{ height:30px; float:left;}
+.copyright { float:right;}
+.copyright img{ float:right;}
+.copyright span{ clear:both; display:block; margin-top:10px; font-family: Helvetica,Arial,sans-serif; line-height:40px; font-size:12px; color:#bdbdbd;}
 
-div.footer {
+/*div.footer {
     background-color: #4a494e;
     padding-top: 30px;
     padding-bottom: 60px;
-}
+}*/
 
 /* CSS for services */
 .service {
@@ -241,7 +280,7 @@ div.footer {
     margin-top: 30px;
     height: 300px;
     width: 420px;
-    margin: 24px 24px 24px 24px;
+    margin: 24px;
     padding: 24px 24px 40px 24px;
     float: left;
 }
@@ -258,14 +297,14 @@ div.footer {
     font-family: Arial;
     color: #726399;
     font-size: 16px;
-	border-bottom: 4px;
+	border-bottom: 5px;
 	border-color: transparent;
     border-bottom-style: solid;
 	font-weight: bold;
 }
 
 .nav li a:hover {
-    border-bottom: 4px #726399;
+    border-bottom: 5px #6059aa;
     border-bottom-style: solid;
     background-color: inherit;
     color: #726399;
@@ -273,7 +312,7 @@ div.footer {
 }
 
 .nav li a:active {
-    border-bottom: 4px #534c9f;
+    border-bottom: 5px #6059aa;
     border-bottom-style: solid;
     background-color: inherit;
     color: #534c9f;
@@ -281,7 +320,7 @@ div.footer {
 }
 
 .nav li a.nav-clicked {
-	border-bottom: 4px #726399;
+	border-bottom: 5px #6059aa;
 	border-radius: 0;
 	border-bottom-style: solid;
 }
