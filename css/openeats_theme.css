@@ -414,5 +414,72 @@ div.fix-margin{ margin-bottom:20px;}
 }
 
 
+#social a {
+    position: relative;
+    color: #ffffff;
+    text-decoration: none;
+    font-family: 'Oswald';
+    display: block;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    border-radius: 6px;
+    text-align: center;
+    
+    -webkit-transform: translate(0, 0);
+    -moz-transform: translate(0, 0);
+    transform: translate(0, 0);
+ 
+    -webkit-transition: all .2s ease;
+    -moz-transition: all .2s ease;
+    -ms-transition: all .2s ease;
+    -o-transition: all .2s ease;
+    transition: all .2s ease;
+
+    height:32px;
+    width:32px;
+    margin: 8px 8px 0 0;
+    float: left;
+    cursor:pointer;
+    overflow:hidden;
+ 
+    font: 0/0 a;
+    text-shadow: none;
+    color: transparent;
+}
+ 
+#social a:active {
+   -webkit-transform: translate(0, 3px);
+    -moz-transform: translate(0, 3px);
+    transform: translate(0, 3px);
+}
+#social a:hover {
+   -webkit-transform: translate(0, 3px);
+    -moz-transform: translate(0, 3px);
+    transform: translate(0, 3px);
+}
+
+#social a.facebook-small{
+ -webkit-box-shadow: 0px 6px 0px #2695BC;
+    -moz-box-shadow: 0px 6px 0px #2695BC;
+    box-shadow: 0px 6px 0px #126ba4;
+}
+#social a.facebook-small{background:#2CA9E1 url("../img/facebook.png") no-repeat center center;}
+ 
+#social a.facebook-small{ -webkit-box-shadow: 0px 2px 0px #2695BC;
+    -moz-box-shadow: 0px 2px 0px #2695BC;
+    box-shadow: 0px 2px 0px #126ba4;
+}
+
+#social a.gplus-small{
+ -webkit-box-shadow: 0px 6px 0px #d54633;
+    -moz-box-shadow: 0px 6px 0px #d54633;
+    box-shadow: 0px 6px 0px #b53524;
+}
+#social a.gplus-small{background:#d54633 url("../img/gplus.png") no-repeat center center;}
+ 
+#social a.gplus-small{ -webkit-box-shadow: 0px 2px 0px #d54633;
+    -moz-box-shadow: 0px 2px 0px #d54633;
+    box-shadow: 0px 2px 0px #b53524;
+}
 
 
