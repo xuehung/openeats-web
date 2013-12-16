@@ -13,13 +13,13 @@ $(function(){
 			NN=0;
 			MOVE=0;
 		}
-		$(".device-slider ul").animate({top:MOVE},800,"easeInOutBack");
+		$(".device-slider ul").animate({top:MOVE},1200,"easeInOutBack");
 		$(".slider-num li").removeClass().eq(NN).addClass("num-hover");
 	}
 	
-	var TT = setInterval(GOGO,3000);
+	var TT = setInterval(GOGO,3400);
 	
-	$(".slider").hover(function(){ clearInterval(TT);}, function(){TT = setInterval(GOGO,3000);});
+	$(".slider").hover(function(){ clearInterval(TT);}, function(){TT = setInterval(GOGO,4000);});
 	
 	$(".slider-num li").click( function(){
 		NN = $(this).index();
