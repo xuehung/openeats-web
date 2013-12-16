@@ -158,9 +158,26 @@ div.video {
 .device-slider ul{ list-style:none; margin:0; padding:0; position:absolute;}
 .device-slider li{}
 .device-slider li img{ vertical-align:bottom; border:none;}
-.slider-num{ width:60px; margin:0 auto; overflow:hidden;}
-.slider-num ul{list-style:none; margin:0; padding:0; width:263px; margin:0 auto; padding-top:15px;}
-.slider-num li{ text-align:center; margin:0 auto; cursor:pointer; float:left; display:block; background:#fff; width:12px; height:12px; -webkit-border-radius:12px; -moz-border-radius:12px; -o-border-radius:12px; margin-right:8px; text-indent:-9999px;}
+.slider-num{ width:46px; margin:0 auto; overflow:hidden;}
+.slider-num ul{
+    list-style:none; 
+    margin:0; 
+    padding:0; 
+    width:263px; 
+    margin:0 auto; 
+}
+.slider-num li{ 
+    text-align:center; 
+    margin:0 auto; 
+    cursor:pointer; float:left; display:block; background:#8480ba; 
+    width:12px; 
+    height:12px; 
+    -webkit-border-radius:12px; 
+    -moz-border-radius:12px; 
+    -o-border-radius:12px; 
+    margin-right:8px; 
+    text-indent:-9999px;
+}
 
 .num-hover{background:#bbb;}
 
@@ -185,18 +202,22 @@ div.fix-margin{ margin-bottom:20px;}
 #usertest h2{ 
     color: #555555;
     width:800px; 
-    margin:20px 0 0 70px; 
+    margin:auto; 
     font-family: 'StMarieWebSCThin', sans-serif; 
     font-size: 48px; 
     font-weight:800; 
-    letter-spacing:-0.03em;}
+    letter-spacing:-0.03em;
+    text-align: center;
+    }
 #usertest h3 {
     width:840px; 
-    margin:10px 0 0 30px; 
+    margin:auto; 
+    padding:10px 0 25px 0;
     color: #666; 
     font-size: 15px; 
     line-height:26px; 
     font-family:Verdana,"Helvetica Neue",Helvetica,Arial,Georgia,sans-serif; 
+    text-align: center;
     }
 
 #team{background-color:#6059aa;}
@@ -226,7 +247,7 @@ div.fix-margin{ margin-bottom:20px;}
 #value h2{
     margin:0; 
     padding:0; /*border-left:solid 4px #006C00; padding-left:8px;*/ 
-    color:#006C00; 
+    color:#356b00; 
     font-family: 'StMarieWebSCThin', 
     sans-serif; font-size: 40px; 
     line-height:48px; 
@@ -243,10 +264,10 @@ div.fix-margin{ margin-bottom:20px;}
 
 .contact-section label {color: #666;}
 
-#footer{background-color: #323232; padding:40px 30px; height:160px;}
+#footer{background-color: #262626; padding:40px 30px; height:160px;}
 .social{ height:30px; float:left;}
-.copyright { float:right;}
-.copyright img{ float:right;}
+.copyright { float:center;}
+.copyright img{ float:center;}
 .copyright span{ clear:both; display:block; margin-top:10px; font-family: Helvetica,Arial,sans-serif; line-height:40px; font-size:12px; color:#bdbdbd;}
 
 /*div.footer {
@@ -264,7 +285,7 @@ div.fix-margin{ margin-bottom:20px;}
 .section-title {
     font-family: Arial;
     font-size: 26px;
-    color: #534c9f;
+    color: #373458;
     font-weight: bold;
 }
 
@@ -291,6 +312,7 @@ div.fix-margin{ margin-bottom:20px;}
 
 .form-horizontal .control-label {
     text-align: left;
+    color: #777777;
 }
 
 .nav li a {
