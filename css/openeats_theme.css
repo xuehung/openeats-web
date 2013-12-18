@@ -60,7 +60,7 @@ div.wrapper {
 { cursor: pointer; }
 
 div.header {
-    background-color: rgba(255,255,255,0.9);
+    background-color: rgba(255,255,255,1);
     width:100%; /*padding:0 30px;*/
 	height: 56px;
 	position:fixed;
@@ -229,7 +229,7 @@ div.fix-margin{ margin-bottom:20px;}
     sans-serif; 
     font-size: 36px; 
     font-weight:800; 
-    margin-bottom:60px;
+    margin-bottom:15px;
     letter-spacing:-0.03em; 
     text-align:center;}
 
@@ -346,10 +346,6 @@ div.fix-margin{ margin-bottom:20px;}
 	border-radius: 0;
 	border-bottom-style: solid;
 }
-
-
-
-
 
 .css_btn_class {
 	font-size:14px;
@@ -482,4 +478,21 @@ div.fix-margin{ margin-bottom:20px;}
     box-shadow: 0px 2px 0px #b53524;
 }
 
+#language {
+    margin: 12px 0 15px 22px;
+    font-size: 11px;
+    color: #6059aa;
+    float: right;
+}
 
+#language a{
+    font-family: Arial;
+    font-size: 11px;
+    color: #999999;
+}
+
+#language a:active{
+    font-family: Arial;
+    font-size: 11px;
+    color: #6059aa;
+}

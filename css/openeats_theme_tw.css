@@ -1,0 +1,37 @@
+@charset "utf-8";
+/* CSS Document */
+
+
+/* ===== 20131217 edited ===== */
+body{font-family:"微軟雅黑","Microsoft YaHei","微軟正黑體","Microsoft JhengHei","蘋果儷中黑","Apple LiGothic Medium",Verdana, Arial; letter-spacing:0.08em;}
+.section, .header, h1, h2, h3, h4,h5 ,h6 ,.nav li a{ font-family:"微軟雅黑","Microsoft YaHei","微軟正黑體","Microsoft JhengHei","蘋果儷中黑","Apple LiGothic Medium",Verdana, Arial; letter-spacing:0.08em; font-weight:normal;}
+
+#home h1,#team h2, #value h2, #usertest h2, #whatwedo .what-con h2{ font-family:"微軟雅黑","Microsoft YaHei","微軟正黑體","Microsoft JhengHei","蘋果儷中黑","Apple LiGothic Medium", Verdana, Arial; line-height:66px; font-weight:normal; letter-spacing:0.08em;}
+#home h3,#value .value-con, #usertest h3{color:#dfddf7; font-size:20px; line-height:28px; font-weight:normal; font-family:"微軟雅黑","Microsoft YaHei","微軟正黑體","Microsoft JhengHei","蘋果儷中黑","Apple LiGothic Medium", Verdana, Arial; letter-spacing:0.07em;}
+
+div.fix-margin-tw{ margin-top:40px;}
+#team h2{ font-size:32px; color:#e8e4f9;}
+
+
+#whatwedo .what-con h4{color:#dfddf7; font-size:15px; line-height:24px; font-weight:normal; font-family:"微軟雅黑","Microsoft YaHei","微軟正黑體","Microsoft JhengHei","蘋果儷中黑","Apple LiGothic Medium", Verdana, Arial; letter-spacing:0.09em;}
+
+.nav-div h4{ font-size:12px;}
+
+
+#value h2{ line-height:44px;}
+#value h3{ font-weight:600;}
+#usertest h2{font-size:40px; letter-spacing:0.06em; padding:0 6%; width:auto;}
+#usertest h3{ color:#666;padding:0 6%; width:auto; margin:20px 0;}
+#usertest p{font-family:"微軟雅黑","Microsoft YaHei","微軟正黑體","Microsoft JhengHei","蘋果儷中黑","Apple LiGothic Medium", Verdana, Arial;}
+#usertest p span{ font-weight:600; display:block;}
+.section-title {font-family:"微軟雅黑","Microsoft YaHei","微軟正黑體","Microsoft JhengHei","蘋果儷中黑","Apple LiGothic Medium", Verdana, Arial; font-size:30px; font-weight:normal;}
+
+
+#usertest .user-table{ margin:30px 6%;}
+#usertest .user-table table{ width:100%; margin:0 auto; border:solid 1px #cecece; background-color:#fbfbfb;}
+#usertest .user-table td{ width:27%; padding:8px; text-align:left; font-size:13px; line-height:22px; letter-spacing:0.07em;}
+#usertest .user-table td.Ttitle{ width:16%; font-size:15px;}
+#usertest .user-table tr.item{ background-color:#e8e4f9; font-weight:bold;}
+/*#usertest .user-table td{ padding:10px;}*/
+
+.copyright{ letter-spacing:0px;}
